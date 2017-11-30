@@ -1,0 +1,18 @@
+<!doctype html>
+{% extends "index.html" %}
+<html>
+  <head>
+    <title>
+      {%block title%}
+        Solotodo - {{title}}
+      {%endblock%}
+    </title>
+  </head>
+  <body>
+    {% block content %}
+    {%for x in asd%}
+      {{x}}
+    {%endfor%}
+    {% endblock %}
+  </body>
+</html>
