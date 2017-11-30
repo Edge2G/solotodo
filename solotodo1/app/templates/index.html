@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+      {%block title%}
+			Solotodo - {{title}}
+      {%endblock%}
+		</title>
+
+    <style>
+    p.title {
+    padding: 10px 10px 10px 10px;
+          }
+    </style>
+
+    <p class="title"><h1><center><a href='/index'> Solohardware </a></center></h1></p>
+
+	</head>
+	<body>
+    <style>
+    table, th, td {
+        border: 1px solid blue;
+    }
+    </style>
+
+
+    <table style="width:100%">
+      <tr>
+        <th>
+          <a href="/index/hdd">Discos Duros</a>
+        </th>
+        <th>
+          <a href="/index/mobo">Placas Madre</a>
+        </th>
+        <th>
+          <a href="/index/cpu">Procesadores</a>
+        </th>
+        <th>
+          <a href="/index/gpu">Tarjetas de video</a>
+        </th>
+        <th>
+          <a href="/index/ram">Memoria RAM</a>
+        </th>
+      </tr>
+    </table>
+
+
+
+    {% block content %}
+
+    <ul>
+			<li><strong>This is bold</strong></li><br>
+			<li><em>This is italic</em></li><br>
+			<li><u>This is underlined</u></li><br>
+		</ul>
+
+		<p><h2>DANK PAGE</h2></p>
+
+		<ol>
+			<li><a href="/index/hdd">Discos Duros</a></li>
+      <li><a href="/index/mobo">Placas Madre</a></li>
+      <li><a href="/index/cpu">Procesadores</a></li>
+      <li><a href="/index/gpu">Tarjetas de video</a></li>
+      <li><a href="/index/ram">Memoria RAM</a></li>
+
+		</ol>
+
+		<a href="/home/cris/Desktop/testpage/page1.html"></a>Page1
+
+		<a href="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/archlinux-512.png">Test img</a><br>
+
+		<img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/archlinux-512.png">
+    {% endblock %}
+	</body>
+
+</html>
