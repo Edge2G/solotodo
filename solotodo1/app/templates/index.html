@@ -8,68 +8,68 @@
 		</title>
 
     <style>
-    p.title {
-    padding: 10px 10px 10px 10px;
-          }
+      
     </style>
 
-    <p class="title"><h1><center><a href='/index'> Solohardware </a></center></h1></p>
+    <font size="6" color="blue"><h1><center><a href='/index'> Solohardware </a></center></h1></font>
 
 	</head>
 	<body>
-    <style>
-    table, th, td {
-        border: 1px solid blue;
-    }
-    </style>
 
 
-    <table style="width:100%">
+    <table style="width:100%" align="center" cellpadding="10" border="1">
       <tr>
         <th>
-          <a href="/index/hdd">Discos Duros</a>
+          <a href="/index/hdd"><font size="6" color="green" face="Monospace"> Discos Duros </font></a>
         </th>
         <th>
-          <a href="/index/mobo">Placas Madre</a>
+          <a href="/index/mobo"><font size="6" color="green" face="Monospace">Placas Madre</font></a>
         </th>
         <th>
-          <a href="/index/cpu">Procesadores</a>
+          <a href="/index/cpu"><font size="6" color="green" face="Monospace">Procesadores</font></a>
         </th>
         <th>
-          <a href="/index/gpu">Tarjetas de video</a>
+          <a href="/index/gpu"><font size="6" color="green" face="Monospace">Tarjetas de video</font></a>
         </th>
         <th>
-          <a href="/index/ram">Memoria RAM</a>
+          <a href="/index/ram"><font size="6" color="green" face="Monospace">Memoria RAM</font></a>
         </th>
       </tr>
+      <tr>
     </table>
 
+  
 
 
     {% block content %}
+    <style>
+      table {
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+      </style>
+    <table width="100%" border="0">
+      <tr>
+        <th>
+          <img src="http://www.ricardorodriguez.cl/imagenes/rr/155/82021.jpg">
+        </th>
+        <th>
+          <img src="https://www.pclan.com.au/media/catalog/product/cache/6/thumbnail/155x155/9df78eab33525d08d6e5fb8d27136e95/g/a/ga-gaming-b8-1.png">
+        </th>
+        <th>
+          <img src="http://deltapcshop.com/files/images/articles/155x155/intel_cpu_9650.jpg">
+        </th>
+        <th>
+          <img src="https://media.sandhills.com/img.axd?id=3005464705&wid=&p=&ext=&w=155&h=97&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=2EddGnqnkFedvcGux0BMmMRsJCOYaEZt" height="100%">
+        </th>
+        <th>
+          <img src="http://www.pcmoguer.es/media/cache/c1/c3/c1c3badf5a0b7f419ee0adcf2944b663.jpg">
+        </th>
+      </tr>
+      <tr>
+    </table>
 
-    <ul>
-			<li><strong>This is bold</strong></li><br>
-			<li><em>This is italic</em></li><br>
-			<li><u>This is underlined</u></li><br>
-		</ul>
-
-		<p><h2>DANK PAGE</h2></p>
-
-		<ol>
-			<li><a href="/index/hdd">Discos Duros</a></li>
-      <li><a href="/index/mobo">Placas Madre</a></li>
-      <li><a href="/index/cpu">Procesadores</a></li>
-      <li><a href="/index/gpu">Tarjetas de video</a></li>
-      <li><a href="/index/ram">Memoria RAM</a></li>
-
-		</ol>
-
-		<a href="/home/cris/Desktop/testpage/page1.html"></a>Page1
-
-		<a href="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/archlinux-512.png">Test img</a><br>
-
-		<img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/archlinux-512.png">
+    <p align="right"><a href="/index/manage"><font size="6" color="red" face="monospace"> Agregar / Eliminar productos </font></a></p>
     {% endblock %}
 	</body>
 

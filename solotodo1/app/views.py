@@ -40,3 +40,7 @@ def gpu():
 @app.route('/index/ram')
 def ram():
     return render_template('ram.html',title='ram')
+
+@app.route('/index/manage')
+def manage():
+    return render_template('add_rm.html',title='manage')

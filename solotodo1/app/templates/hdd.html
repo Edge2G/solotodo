@@ -8,8 +8,28 @@
       {%endblock%}
     </title>
   </head>
+
   <body>
     {% block content %}
+    <style> 
+        input[type=text] {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: rgb(24, 128, 88);
+            color: white;
+            font-size: 16px;
+        }
+        input[type=submit] {
+          font-size: 22px;
+        }
+        </style>
+    <form action="/index/hdd">
+      <center><input type="submit" value="Buscar">
+    <input type="text" name="buscar_hdd_nombre" placeholder="Ingrese el nombre de producto o palabra clave"></center>
+    </form>
     {% endblock %}
   </body>
 </html>
