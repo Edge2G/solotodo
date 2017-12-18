@@ -25,13 +25,10 @@
           font-size: 22px;
         }
         </style>
-    <form action="/index/mobo">
+    <form method='POST' action="/index/mobo">
       <center><input type="submit" value="Buscar">
     <input type="text" name="buscar_mobo_nombre" placeholder="Ingrese el nombre de producto o palabra clave"></center>
     </form>
-    {%for x in asd%}
-      {{x}}
-    {%endfor%}
     {% endblock %}
   </body>
 </html>
