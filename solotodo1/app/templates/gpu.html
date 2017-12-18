@@ -10,7 +10,7 @@
   </head>
   <body>
     {% block content %}
-    <style> 
+    <style>
         input[type=text] {
             width: 30%;
             padding: 12px 20px;
@@ -29,6 +29,9 @@
       <center><input type="submit" value="Buscar">
     <input type="text" name="buscar_gpu_nombre" placeholder="Ingrese el nombre de producto o palabra clave"></center>
     </form>
+    {%for x in data%}
+      {{x}}
+    {%endfor%}
     {% endblock %}
   </body>
 </html>
