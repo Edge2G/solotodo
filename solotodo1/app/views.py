@@ -54,7 +54,6 @@ def ram():
 def manage():
     return render_template('add_rm.html',title='manage')
 
-
 '''
     cur.execute(sql)
     asd = cur.fetchall()
