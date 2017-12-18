@@ -19,7 +19,6 @@ def hdd():
 
 @app.route('/index/mobo', methods = ['POST' , 'GET'])
 def mobo():
-<<<<<<< HEAD
     if request.method == 'POST':
         nomm = request.form['buscar_mobo_nombre']
         print (nomm)
@@ -38,9 +37,6 @@ def mobo():
         asd = cur.fetchall()
         return render_template('mobo.html',title='mobo', asd = asd, nomm = nomm)
     return render_template('mobo.html', title='mobo')
-=======
-    return render_template('mobo.html',title='mobo')
->>>>>>> ae5f66db9a16ac9b222bca9f6e166117b38f7438
 
 @app.route('/index/cpu', methods = ['POST' , 'GET'])
 def cpu():
@@ -57,12 +53,8 @@ def ram():
 @app.route('/index/manage', methods = ['POST' , 'GET'])
 def manage():
     return render_template('add_rm.html',title='manage')
-<<<<<<< HEAD
-=======
-
 
 '''
     cur.execute(sql)
     asd = cur.fetchall()
 '''
->>>>>>> ae5f66db9a16ac9b222bca9f6e166117b38f7438
