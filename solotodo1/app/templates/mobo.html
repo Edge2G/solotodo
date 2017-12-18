@@ -29,7 +29,6 @@
       <center><input type="submit" value="Buscar">
     <input type="text" name="buscar_mobo_nombre" placeholder="Ingrese el nombre de producto o palabra clave"></center>
     </form>
-<<<<<<< HEAD
     {% set temp = [] %}
     {% if temp.append('') %} {% endif %}
     {%for x in asd%}
@@ -38,10 +37,6 @@
       {%endif%}
       {% if temp.append(x[0]) %} {% endif %}
       <h3>{{x[1]}}: {{x[2]}}</h3>
-=======
-    {%for x in data%}
-      {{x}}
->>>>>>> 8395ee7ab4a5d1f3963d087f53e026a082e166ef
     {%endfor%}
     {% endblock %}
   </body>
