@@ -98,7 +98,6 @@ def ram():
         return render_template('ram.html',title='ram', data = data, nomm = nomm)
     return render_template('ram.html',title='ram')
 
-<<<<<<< HEAD
 @app.route('/index/add', methods = ['POST' , 'GET'])
 def add():
     return render_template('add.html',title='Agregar')
@@ -106,8 +105,3 @@ def add():
 @app.route('/index/delete', methods = ['POST' , 'GET'])
 def delete():
     return render_template('delete.html',title='Eliminar')
-=======
-@app.route('/index/manage', methods = ['POST' , 'GET'])
-def manage():
-    return render_template('add_rm.html',title='manage')
->>>>>>> f072849aa95065396868d697b74ad62a8fbbad63
