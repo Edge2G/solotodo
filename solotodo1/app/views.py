@@ -51,11 +51,10 @@ def gpu():
 def ram():
     return render_template('ram.html',title='ram')
 
-@app.route('/index/manage', methods = ['POST' , 'GET'])
-def manage():
-    return render_template('add_rm.html',title='manage')
+@app.route('/index/add', methods = ['POST' , 'GET'])
+def add():
+    return render_template('add.html',title='Agregar')
 
-'''
-    cur.execute(sql)
-    asd = cur.fetchall()
-'''
+@app.route('/index/delete', methods = ['POST' , 'GET'])
+def delete():
+    return render_template('delete.html',title='Eliminar')
