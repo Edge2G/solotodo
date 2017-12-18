@@ -19,15 +19,26 @@ def hdd():
 
     return render_template('hdd.html',title='hdd')
 
-@app.route('/index/mobo', methods = ["POST" , "GET"])
+@app.route('/index/mobo', methods = ['POST' , 'GET'])
 def mobo():
-    sql = """
-    select * from productos where categoria_id = 2;
-    """
-    cur.execute(sql)
-    asd = cur.fetchall()
-
-    return render_template('mobo.html',title='mobo', asd = asd)
+    if request.method == 'POST':
+        nomm = request.form['buscar_mobo_nombre']
+        print (nomm)
+        '''
+        sql = """
+        select * from productos where categoria_id =
+        """ + nomm + """;"""
+        '''
+        sql = """
+        select productos.nombre, especificacion, productos_detalle.detalle
+        from productos, productos_detalle, especificaciones
+        where productos.id = productos_detalle.producto_id
+        and productos_detalle.especificacion_id = especificaciones.id
+        and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
+        cur.execute(sql)
+        asd = cur.fetchall()
+        return render_template('mobo.html',title='mobo', asd = asd, nomm = nomm)
+    return render_template('mobo.html', title='mobo')
 
 @app.route('/index/cpu')
 def cpu():
