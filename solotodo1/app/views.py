@@ -31,6 +31,7 @@ def mobo():
         select productos.nombre, especificacion, productos_detalle.detalle
         from productos, productos_detalle, especificaciones
         where productos.id = productos_detalle.producto_id
+        and productos.categoria_id = '2'
         and productos_detalle.especificacion_id = especificaciones.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
         cur.execute(sql)
