@@ -2,7 +2,7 @@
 from app import app
 from datetime import datetime
 from flask import render_template,request,redirect
-from configuraciones import *
+from .configuraciones import *
 import psycopg2
 
 conn = psycopg2.connect("dbname=%s host=%s user=%s password=%s"%(database,host,user,passwd))
