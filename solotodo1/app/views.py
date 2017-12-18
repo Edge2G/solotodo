@@ -19,15 +19,12 @@ def hdd():
         nomm = request.form['buscar_hdd_nombre']
         print (nomm)
         sql = """
-        select nombre, string_agg(especificacion, ',') as specs
-        from
-                    (select productos.nombre, especificacion, productos_detalle.detalle
-                    from productos, productos_detalle, especificaciones
-                    where productos.id = productos_detalle.producto_id
-                    and productos.categoria_id = '1'
-                    and productos_detalle.especificacion_id = especificaciones.id
-                    and lower(productos.nombre) like lower('%""" + nomm +"""%')) as tb
-        group by nombre
+        select productos.nombre, especificacion, productos_detalle.detalle
+        from productos, productos_detalle, especificaciones
+        where productos.id = productos_detalle.producto_id
+        and productos.categoria_id = '1'
+        and productos_detalle.especificacion_id = especificaciones.id
+        and lower(productos.nombre) like lower('%""" + nomm +"""%')
         ;"""
         cur.execute(sql)
         data = cur.fetchall()
