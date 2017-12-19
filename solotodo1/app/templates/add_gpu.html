@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Solotodo - {{title}}
+        </title>
+        <p align="left"><a href="/index"><font size="6" color="green" face="monospace"> Volver </font></a></p>
+        <center><h1>Agregar Disco Duro</h1></center>
+    </head>
+    <body>
+            <style>
+                    
+                      select {
+                        border: 1px solid black;
+                        font-size: 20px;
+                        }
+
+                    input[type=text] {
+                        width: 30%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        box-sizing: border-box;
+                        border: none;
+                        background-color: rgb(24, 128, 88);
+                        color: white;
+                        font-size: 16px;
+                                    }
+                    input[type=submit] {
+                        font-size: 22px;
+                            }
+                        
+            </style>
+
+            Tamaño:     
+            <select>
+                    <option value="325mm"> 325mm </option>
+                    <option value="200mm"> 200mm </option>
+                    <option value="255mm"> 255mm </option>
+                                            
+            </select>
+
+            Memoria:    
+            <select>
+                    <option value="2GB"> 2 GB </option>
+                    <option value="4GB"> 4 GB </option>                        
+                    <option value="6GB"> 6 GB </option>
+            </select>
+
+            Frecuencia:      
+            <select>
+                    <option value="1600MHz"> 1600 MHz </option>
+                    <option value="1650MHz"> 1650 MHz </option>
+                    <option value="1771MHz"> 1771 MHz </option>
+                    <option value="1790MHz"> 1790 MHz </option>                       
+            </select>
+
+            Marca:     
+            <select>
+                    <option value="AMD"> AMD </option>
+                    <option value="Nvidia"> Nvidia </option>
+
+            </select>
+
+
+            <form method='POST' action="/index/add_hdd">
+              <input type="text" name="nuevo_hdd" placeholder="Ingrese el nombre del producto nuevo">
+              <input type="submit" value="Agregar">
+              </form>
+    </body>
+</html>

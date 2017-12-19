@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Solotodo - {{title}}
+        </title>
+        <p align="left"><a href="/index"><font size="6" color="green" face="monospace"> Volver </font></a></p>
+        <center><h1>Agregar Placa Madre</h1></center>
+    </head>
+    <body>
+            <style>
+                    
+                      select {
+                        border: 1px solid black;
+                        font-size: 20px;
+                        }
+
+                    input[type=text] {
+                        width: 30%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        box-sizing: border-box;
+                        border: none;
+                        background-color: rgb(24, 128, 88);
+                        color: white;
+                        font-size: 16px;
+                                    }
+                    input[type=submit] {
+                        font-size: 22px;
+                            }
+                        
+            </style>
+
+            Socket:     
+            <select>
+                    <option value="AM3+"> AM3+ </option>
+                    <option value="FM2"> FM2 </option>
+                    <option value="FM2+"> FM2+ </option>
+                    <option value="LGA1150"> LGA1150 </option>
+                    <option value="LGA1151"> LGA1151 </option>                        
+            </select>
+
+            Formato:    
+            <select>
+                    <option value="ATX"> ATX </option>
+                    <option value="MiniATX"> Mini ATX </option>                        
+            </select>
+
+            Marca:     
+            <select>
+                    <option value="Gigabyte"> Gigabyte </option>
+                    <option value="Asus"> Asus </option>
+                    <option value="MSI"> MSI </option>
+                    <option value="EVGA"> EVGA </option>
+            </select>
+
+            <form method='POST' action="/index/add_mobo">
+              <input type="text" name="nuevo_mobo" placeholder="Ingrese el nombre del producto nuevo">
+              <input type="submit" value="Agregar">
+              </form>
+    </body>
+</html>
