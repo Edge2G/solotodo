@@ -24,7 +24,8 @@ def hdd():
         where productos.id = productos_detalle.producto_id
         and productos.categoria_id = '1'
         and productos_detalle.especificacion_id = especificaciones.id
-        and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
+        and lower(productos.nombre) like lower('%""" + nomm +"""%')
+        ;"""
         cur.execute(sql)
         data = cur.fetchall()
         return render_template('hdd.html',title='hdd', data = data, nomm = nomm)
