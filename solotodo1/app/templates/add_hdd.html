@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Solotodo - {{title}}
+        </title>
+        <p align="left"><a href="/index"><font size="6" color="green" face="monospace"> Volver </font></a></p>
+        <center><h1>Agregar Disco Duro</h1></center>
+    </head>
+    <body>
+            <style>
+                    
+                      select {
+                        border: 1px solid black;
+                        font-size: 20px;
+                        }
+
+                    input[type=text] {
+                        width: 30%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        box-sizing: border-box;
+                        border: none;
+                        background-color: rgb(24, 128, 88);
+                        color: white;
+                        font-size: 16px;
+                                    }
+                    input[type=submit] {
+                        font-size: 22px;
+                            }
+                        
+            </style>
+
+            Tamaño:     
+            <select>
+                    <option value="2.5"> 2.5" </option>
+                    <option value="3.5"> 3.5" </option>                        
+            </select>
+
+            RPM:    
+            <select>
+                    <option value="5400"> 5400 </option>
+                    <option value="7200"> 7200 </option>                        
+            </select>
+
+            Capacidad:      
+            <select>
+                    <option value="128GB"> 128 GB </option>
+                    <option value="256GB"> 256 GB </option>
+                    <option value="512GB"> 512 GB </option>
+                    <option value="1TB"> 1 TB </option>                       
+            </select>
+
+            Marca:     
+            <select>
+                    <option value="WesternDigital"> Western Digital </option>
+                    <option value="Seagate"> Seagate </option>
+                    <option value="Toshiba"> Toshiba </option>
+
+            </select>
+
+            <form method='POST' action="/index/add_hdd">
+              <input type="text" name="nuevo_hdd" placeholder="Ingrese el nombre del producto nuevo">
+              <input type="submit" value="Agregar">
+              </form>
+    </body>
+</html>

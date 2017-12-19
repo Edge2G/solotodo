@@ -99,9 +99,25 @@ def ram():
         return render_template('ram.html',title='ram', data = data, nomm = nomm)
     return render_template('ram.html',title='ram')
 
-@app.route('/index/add', methods = ['POST' , 'GET'])
-def add():
-    return render_template('add.html',title='Agregar')
+@app.route('/index/add_hdd', methods = ['POST' , 'GET'])
+def add_hdd():
+    return render_template('add_hdd.html',title='Agregar')
+
+@app.route('/index/add_mobo', methods = ['POST' , 'GET'])
+def add_mobo():
+    return render_template('add_mobo.html',title='Agregar')
+
+@app.route('/index/add_cpu', methods = ['POST' , 'GET'])
+def add_cpu():
+    return render_template('add_cpu.html',title='Agregar')
+
+@app.route('/index/add_gpu', methods = ['POST' , 'GET'])
+def add_gpu():
+    return render_template('add_gpu.html',title='Agregar')
+
+@app.route('/index/add_ram', methods = ['POST' , 'GET'])
+def add_ram():
+    return render_template('add_ram.html',title='Agregar')
 
 @app.route('/index/delete', methods = ['POST' , 'GET'])
 def delete():

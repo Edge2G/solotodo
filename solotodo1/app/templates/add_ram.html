@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Solotodo - {{title}}
+        </title>
+        <p align="left"><a href="/index"><font size="6" color="green" face="monospace"> Volver </font></a></p>
+        <center><h1>Agregar Disco Duro</h1></center>
+    </head>
+    <body>
+            <style>
+                    
+                      select {
+                        border: 1px solid black;
+                        font-size: 20px;
+                        }
+
+                    input[type=text] {
+                        width: 30%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        box-sizing: border-box;
+                        border: none;
+                        background-color: rgb(24, 128, 88);
+                        color: white;
+                        font-size: 16px;
+                                    }
+                    input[type=submit] {
+                        font-size: 22px;
+                            }
+                        
+            </style>
+
+            Memoria:     
+            <select>
+                    <option value="2GB"> 2 GB </option>
+                    <option value="3GB"> 3 GB </option>
+                    <option value="4GB"> 4 GB </option>
+                    <option value="8GB"> 8 GB </option>
+            </select>
+
+            Frecuencia:    
+            <select>
+                    <option value="1600MHz"> 1600MHz </option>
+                    <option value="2100MHz"> 2100MHz </option>
+                    <option value="2400MHz"> 2400MHz </option>                        
+            </select>
+
+            Formato:      
+            <select>
+                    <option value="DIMM"> DIMM </option>
+                    <option value="SO-DIMM"> SO-DIMM </option>                       
+            </select>
+
+            Latencia:      
+            <select>
+                    <option value="3"> 3 </option>
+                    <option value="10"> 10 </option>
+                    <option value="19"> 19 </option>                       
+            </select>
+
+            Voltaje:      
+            <select>
+                    <option value="1.5V"> 1.5 V </option>
+                    <option value="1.2V"> 1.2 V </option>                       
+            </select>
+
+            Marca:     
+            <select>
+                    <option value="Kingston"> Kingston </option>
+                    <option value="Corsair"> Corsair </option>
+                    <option value="Crucial"> Crucial </option>
+                    <option value="G.Skill"> G.Skill </option>
+            </select>
+
+            <form method='POST' action="/index/add_hdd">
+              <input type="text" name="nuevo_hdd" placeholder="Ingrese el nombre del producto nuevo">
+              <input type="submit" value="Agregar">
+              </form>
+    </body>
+</html>
