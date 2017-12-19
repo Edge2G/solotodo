@@ -170,7 +170,7 @@ INSERT INTO precios VALUES(1,1,44000);
 cur.execute(sql)
 
 sql= """
-INSERT INTO precios VALUES(1,1,39000);
+INSERT INTO precios VALUES(1,2,39000);
 """
 cur.execute(sql)
 
