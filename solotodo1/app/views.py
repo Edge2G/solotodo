@@ -25,10 +25,29 @@ def hdd():
         and productos.categoria_id = '1'
         and productos_detalle.especificacion_id = especificaciones.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%')
+        order by productos.nombre
         ;"""
         cur.execute(sql)
         data = cur.fetchall()
-        return render_template('hdd.html',title='hdd', data = data, nomm = nomm)
+        prod = []
+        temp = ''
+        for x in data:
+            if x[0] != temp:
+                prod.append(x[0])
+            temp = x[0]
+        data2=[]
+        for x in prod:
+            sql = """
+            select tiendas.nombre, precios.precio, productos.nombre
+            from precios, tiendas, productos
+            where productos.id = precios.producto_id
+            and tiendas.id = precios.tienda_id
+            and lower(productos.nombre) like lower('%""" + x +"""%')
+            ;"""
+            cur.execute(sql)
+            data2.append(cur.fetchall())
+        print(data2[0][0])
+        return render_template('hdd.html',title='hdd', data = data, data2 = data2, nomm = nomm)
     return render_template('hdd.html',title='hdd')
 
 @app.route('/index/mobo', methods = ['POST' , 'GET'])
