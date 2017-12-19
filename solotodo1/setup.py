@@ -30,12 +30,13 @@ CREATE TABLE marcas(id serial PRIMARY KEY, nombre varchar(50));
 cur.execute(sql)
 
 sql = """
-CREATE TABLE productos_detalle(producto_id integer, especificacion_id integer, detalle varchar(50));
+CREATE TABLE productos_detalle(producto_id integer, especificacion_id integer, detalle varchar(50),
+                                                    PRIMARY KEY(producto_id, especificacion_id));
 """
 cur.execute(sql)
 
 sql = """
-CREATE TABLE precios(producto_id integer, tienda_id integer, precio integer);
+CREATE TABLE precios(producto_id integer, tienda_id integer, precio integer, PRIMARY KEY(producto_id, tienda_id));
 """
 cur.execute(sql)
 
@@ -45,7 +46,7 @@ CREATE TABLE categorias(id serial PRIMARY KEY, nombre varchar(30));
 cur.execute(sql)
 
 sql = """
-CREATE TABLE cat_esp(categoria_id integer, especificacion_id integer);
+CREATE TABLE cat_esp(categoria_id integer, especificacion_id integer, PRIMARY KEY(categoria_id, especificacion_id));
 """
 cur.execute(sql)
 
