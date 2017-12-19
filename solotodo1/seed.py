@@ -289,6 +289,85 @@ INSERT INTO productos_detalle VALUES(5,9,'Micro ATX');
 """
 cur.execute(sql)
 
+sql= """
+INSERT INTO cat_esp VALUES(1,1);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(1,2);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(1,3);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(1,4);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(2,6);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(2,9);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(3,1);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(3,7);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(3,8);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(4,5);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(4,6);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(5,7);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(5,8);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(5,9);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(5,10);
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO cat_esp VALUES(5,11);
+"""
+cur.execute(sql)
 
 conn.commit()
 cur.close()

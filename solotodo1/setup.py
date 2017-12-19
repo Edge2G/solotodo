@@ -44,6 +44,11 @@ CREATE TABLE categorias(id serial PRIMARY KEY, nombre varchar(30));
 """
 cur.execute(sql)
 
+sql = """
+CREATE TABLE cat_esp(categoria_id integer, especificacion_id integer);
+"""
+cur.execute(sql)
+
 conn.commit()
 cur.close()
 conn.close()
