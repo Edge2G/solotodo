@@ -37,10 +37,29 @@
     {% if temp.append('') %} {% endif %}
     {%for x in data%}
       {% if temp[1] != x[0] %}
-        <h1>{{x[0]}}</h1>
+        <h2>{{x[0]}}</h2>
+        <h3>precios:</h3>
+        {%for prod in data2%}
+          {%for prec in prod%}
+            {% if prec[2] == x[0] %}
+              {{prec[0]}}:${{prec[1]}}
+              <h5></h5>
+            {%endif%}
+          {%endfor%}
+        {%endfor%}
       {%endif%}
       {% if temp.append(x[0]) %} {% endif %}
-      <h3>{{x[1]}}: {{x[2]}}</h3>
+      <h3>{{x[1]}}:</h3> {{x[2]}}
+      {% if temp[1] != x[0] %}
+        <h2>precios</h2>
+        {%for prod in data2%}
+          {%for prec in prod%}
+            {% if prec[2] == x[0] %}
+              <h3>{{prec[0]}}:{{prec[1]}}</h3>
+            {%endif%}
+          {%endfor%}
+        {%endfor%}
+      {%endif%}
     {%endfor%}
     {% endblock %}
   </body>
