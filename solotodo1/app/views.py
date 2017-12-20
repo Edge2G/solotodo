@@ -222,6 +222,9 @@ def add_hdd():
         """
         cur.execute(sql)
         marca_id = cur.fetchall()
+
+        print(new_id)
+        print(marca)
         
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
@@ -266,7 +269,7 @@ def add_mobo():
         """
         cur.execute(sql)
         new_id = cur.fetchall()
-
+        
         sql = """
         select id from marcas where nombre = '"""+marca+"""';
         """
@@ -277,7 +280,7 @@ def add_mobo():
         marca_id = str(marca_id[0][0])
 
         sql= """
-        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",2);
         """
         print(sql)
         cur.execute(sql)
@@ -292,7 +295,6 @@ def add_mobo():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
-
 
     return render_template('add_mobo.html',title='Agregar')
 
@@ -322,7 +324,7 @@ def add_cpu():
         marca_id = str(marca_id[0][0])
 
         sql= """
-        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",4);
         """
         print(sql)
         cur.execute(sql)
@@ -337,8 +339,7 @@ def add_cpu():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
-
-
+    
     return render_template('add_cpu.html',title='Agregar')
 
 @app.route('/index/add_gpu', methods = ['POST' , 'GET'])
@@ -368,7 +369,7 @@ def add_gpu():
         marca_id = str(marca_id[0][0])
 
         sql= """
-        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",3);
         """
         print(sql)
         cur.execute(sql)
@@ -392,6 +393,7 @@ def add_ram():
     if request.method == 'POST':
         nombre=request.form['nuevo_ram']
         precio=request.form['precio']
+        marca=request.form['marca']
         tienda=request.form['tienda']
         memoria=request.form['memoria']
         frecuencia=request.form['frecuencia']
@@ -415,7 +417,7 @@ def add_ram():
         marca_id = str(marca_id[0][0])
 
         sql= """
-        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",5);
         """
         print(sql)
         cur.execute(sql)
