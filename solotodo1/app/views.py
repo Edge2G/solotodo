@@ -223,12 +223,6 @@ def add_hdd():
         cur.execute(sql)
         marca_id = cur.fetchall()
 
-<<<<<<< HEAD
-        print(new_id)
-        print(marca)
-        
-=======
->>>>>>> 7c87a1d9b73bc9c726a83fb4fac7f0885ad4175f
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
