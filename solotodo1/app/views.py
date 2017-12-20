@@ -2,7 +2,7 @@
 from app import app
 from datetime import datetime
 from flask import render_template,request,redirect
-from .configuraciones import *
+from configuraciones import *
 import psycopg2
 
 conn = psycopg2.connect("dbname=%s host=%s user=%s password=%s"%(database,host,user,passwd))
@@ -17,7 +17,7 @@ def index():
 def hdd():
     if request.method == 'POST':
         nomm = request.form['buscar_hdd_nombre']
-        print (nomm)
+        #print (nomm)
         sql = """
         select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
         from productos, productos_detalle, especificaciones, marcas
@@ -47,7 +47,7 @@ def hdd():
             """
             cur.execute(sql)
             data2.append(cur.fetchall())
-            print(data2)
+            #print(data2)
         return render_template('hdd.html',title='hdd', data = data, data2 = data2, nomm = nomm)
     return render_template('hdd.html',title='hdd')
 
@@ -55,7 +55,7 @@ def hdd():
 def mobo():
     if request.method == 'POST':
         nomm = request.form['buscar_mobo_nombre']
-        print (nomm)
+        #print (nomm)
         sql = """
         select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
         from productos, productos_detalle, especificaciones, marcas
@@ -210,6 +210,28 @@ def add_hdd():
         cap=request.form['capacidad']
         buf=request.form['bufer']
         marca=request.form['marca']
+        
+        sql = """
+        select max(id)+1 as maximo from productos;
+        """
+        cur.execute(sql)
+        new_id = cur.fetchall()
+
+        sql = """
+        select id from marcas where nombre = '"""+marca+"""';
+        """
+        cur.execute(sql)
+        marca_id = cur.fetchall()
+        
+        new_id = str(new_id[0][0])
+        marca_id = str(marca_id[0][0])
+
+        sql = """
+        insert into productos values("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        """
+        cur.execute(sql)
+
+
 
     return render_template('add_hdd.html',title='Agregar')
 
