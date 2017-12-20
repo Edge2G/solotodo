@@ -64,7 +64,7 @@ def mobo():
         and productos_detalle.especificacion_id = especificaciones.id
         and productos.marca_id = marcas.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%')
-        order by productos.nombre;
+        order by productos.nombre, especificacion, productos_detalle.detalle;
         """
         cur.execute(sql)
         data = cur.fetchall()
@@ -101,7 +101,7 @@ def cpu():
         and productos_detalle.especificacion_id = especificaciones.id
         and productos.marca_id = marcas.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%')
-        order by productos.nombre;
+        order by productos.nombre, especificacion, productos_detalle.detalle;
         """
         cur.execute(sql)
         data = cur.fetchall()
@@ -138,7 +138,7 @@ def gpu():
         and productos_detalle.especificacion_id = especificaciones.id
         and productos.marca_id = marcas.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%')
-        order by productos.nombre;
+        order by productos.nombre, especificacion, productos_detalle.detalle;
         """
         cur.execute(sql)
         data = cur.fetchall()
@@ -175,7 +175,7 @@ def ram():
         and productos_detalle.especificacion_id = especificaciones.id
         and productos.marca_id = marcas.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%')
-        order by productos.nombre;
+        order by productos.nombre, especificacion, productos_detalle.detalle;
         """
         cur.execute(sql)
         data = cur.fetchall()
