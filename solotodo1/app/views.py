@@ -47,10 +47,7 @@ def hdd():
             """
             cur.execute(sql)
             data2.append(cur.fetchall())
-<<<<<<< HEAD
             #print(data2)
-=======
->>>>>>> 8ed880e86fc30ea236eea011d9368f34ee6081d4
         return render_template('hdd.html',title='hdd', data = data, data2 = data2, nomm = nomm)
     return render_template('hdd.html',title='hdd')
 
@@ -229,12 +226,26 @@ def add_hdd():
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
-        sql = """
-        insert into productos values("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        sql= """
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
         """
+        print(sql)
         cur.execute(sql)
 
 
+
+        sql = """
+        select * from tiendas;
+        """
+        cur.execute(sql)
+        tablatiendas = cur.fetchall()
+        tienda_id = 0
+        for x in tablatiendas:
+            if tienda == tablatiendas[1]:
+                tienda_id = tablatiendas[0]
+        sql = """
+        select * from especificaciones;
+        """
 
     return render_template('add_hdd.html',title='Agregar')
 
@@ -248,6 +259,17 @@ def add_mobo():
         formato=request.form['formato']
         marca=request.form['marca']
 
+        sql = """
+        select * from tiendas;
+        """
+        cur.execute(sql)
+        tablatiendas = cur.fetchall()
+        tienda_id = 0
+        for x in tablatiendas:
+            if tienda == tablatiendas[1]:
+                tienda_id = tablatiendas[0]
+
+
     return render_template('add_mobo.html',title='Agregar')
 
 @app.route('/index/add_cpu', methods = ['POST' , 'GET'])
@@ -259,6 +281,17 @@ def add_cpu():
         cores=request.form['cores']
         socket=request.form['socket']
         marca=request.form['marca']
+
+        sql = """
+        select * from tiendas;
+        """
+        cur.execute(sql)
+        tablatiendas = cur.fetchall()
+        tienda_id = 0
+        for x in tablatiendas:
+            if tienda == tablatiendas[1]:
+                tienda_id = tablatiendas[0]
+
 
     return render_template('add_cpu.html',title='Agregar')
 
@@ -273,6 +306,17 @@ def add_gpu():
         frecuencia=request.form['frecuencia']
         marca=request.form['marca']
 
+        sql = """
+        select * from tiendas;
+        """
+        cur.execute(sql)
+        tablatiendas = cur.fetchall()
+        tienda_id = 0
+        for x in tablatiendas:
+            if tienda == tablatiendas[1]:
+                tienda_id = tablatiendas[0]
+
+
     return render_template('add_gpu.html',title='Agregar')
 
 @app.route('/index/add_ram', methods = ['POST' , 'GET'])
@@ -286,7 +330,17 @@ def add_ram():
         formato=request.form['formato']
         latencia=request.form['latencia']
         voltaje=request.form['voltaje']
-        
+
+        sql = """
+        select * from tiendas;
+        """
+        cur.execute(sql)
+        tablatiendas = cur.fetchall()
+        tienda_id = 0
+        for x in tablatiendas:
+            if tienda == tablatiendas[1]:
+                tienda_id = tablatiendas[0]
+
 
     return render_template('add_ram.html',title='Agregar')
 
