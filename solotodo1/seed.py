@@ -144,6 +144,12 @@ INSERT INTO productos VALUES(1,'Western Digital Blue 500 GB WD5000LPCX',1,1);
 """
 cur.execute(sql)
 
+
+sql= """
+INSERT INTO productos VALUES(6,'Test',1,1);
+"""
+cur.execute(sql)
+
 sql= """
 INSERT INTO productos VALUES(2,'Intel Core i5-7400 (BX80677I57400)',3,4);
 """
@@ -211,6 +217,11 @@ cur.execute(sql)
 
 sql= """
 INSERT INTO productos_detalle VALUES(1,1,'2.5"');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO productos_detalle VALUES(6,1,'2.5"');
 """
 cur.execute(sql)
 
