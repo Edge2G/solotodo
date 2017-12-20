@@ -19,14 +19,15 @@ def hdd():
         nomm = request.form['buscar_hdd_nombre']
         print (nomm)
         sql = """
-        select productos.nombre, especificacion, productos_detalle.detalle
-        from productos, productos_detalle, especificaciones
+        select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
+        from productos, productos_detalle, especificaciones, marcas
         where productos.id = productos_detalle.producto_id
         and productos.categoria_id = '1'
         and productos_detalle.especificacion_id = especificaciones.id
+        and productos.marca_id = marcas.id
         and lower(productos.nombre) like lower('%""" + nomm +"""%')
-        order by productos.nombre
-        ;"""
+        order by productos.nombre;
+        """
         cur.execute(sql)
         data = cur.fetchall()
         prod = []
@@ -42,10 +43,11 @@ def hdd():
             from precios, tiendas, productos
             where productos.id = precios.producto_id
             and tiendas.id = precios.tienda_id
-            and lower(productos.nombre) like lower('%""" + x +"""%')
-            ;"""
+            and lower(productos.nombre) like lower('%""" + x +"""%');
+            """
             cur.execute(sql)
             data2.append(cur.fetchall())
+            print(data2)
         return render_template('hdd.html',title='hdd', data = data, data2 = data2, nomm = nomm)
     return render_template('hdd.html',title='hdd')
 
@@ -55,12 +57,15 @@ def mobo():
         nomm = request.form['buscar_mobo_nombre']
         print (nomm)
         sql = """
-        select productos.nombre, especificacion, productos_detalle.detalle
-        from productos, productos_detalle, especificaciones
+        select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
+        from productos, productos_detalle, especificaciones, marcas
         where productos.id = productos_detalle.producto_id
         and productos.categoria_id = '2'
         and productos_detalle.especificacion_id = especificaciones.id
-        and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
+        and productos.marca_id = marcas.id
+        and lower(productos.nombre) like lower('%""" + nomm +"""%')
+        order by productos.nombre;
+        """
         cur.execute(sql)
         data = cur.fetchall()
         prod = []
@@ -76,8 +81,8 @@ def mobo():
             from precios, tiendas, productos
             where productos.id = precios.producto_id
             and tiendas.id = precios.tienda_id
-            and lower(productos.nombre) like lower('%""" + x +"""%')
-            ;"""
+            and lower(productos.nombre) like lower('%""" + x +"""%');
+            """
             cur.execute(sql)
             data2.append(cur.fetchall())
         return render_template('mobo.html',title='mobo', data = data, data2 = data2, nomm = nomm)
@@ -89,12 +94,15 @@ def cpu():
         nomm = request.form['buscar_cpu_nombre']
         print (nomm)
         sql = """
-        select productos.nombre, especificacion, productos_detalle.detalle
-        from productos, productos_detalle, especificaciones
+        select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
+        from productos, productos_detalle, especificaciones, marcas
         where productos.id = productos_detalle.producto_id
         and productos.categoria_id = '4'
         and productos_detalle.especificacion_id = especificaciones.id
-        and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
+        and productos.marca_id = marcas.id
+        and lower(productos.nombre) like lower('%""" + nomm +"""%')
+        order by productos.nombre;
+        """
         cur.execute(sql)
         data = cur.fetchall()
         prod = []
@@ -110,8 +118,8 @@ def cpu():
             from precios, tiendas, productos
             where productos.id = precios.producto_id
             and tiendas.id = precios.tienda_id
-            and lower(productos.nombre) like lower('%""" + x +"""%')
-            ;"""
+            and lower(productos.nombre) like lower('%""" + x +"""%');
+            """
             cur.execute(sql)
             data2.append(cur.fetchall())
         return render_template('cpu.html',title='cpu', data = data, data2 = data2, nomm = nomm)
@@ -123,12 +131,15 @@ def gpu():
         nomm = request.form['buscar_gpu_nombre']
         print (nomm)
         sql = """
-        select productos.nombre, especificacion, productos_detalle.detalle
-        from productos, productos_detalle, especificaciones
+        select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
+        from productos, productos_detalle, especificaciones, marcas
         where productos.id = productos_detalle.producto_id
         and productos.categoria_id = '3'
         and productos_detalle.especificacion_id = especificaciones.id
-        and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
+        and productos.marca_id = marcas.id
+        and lower(productos.nombre) like lower('%""" + nomm +"""%')
+        order by productos.nombre;
+        """
         cur.execute(sql)
         data = cur.fetchall()
         prod = []
@@ -144,8 +155,8 @@ def gpu():
             from precios, tiendas, productos
             where productos.id = precios.producto_id
             and tiendas.id = precios.tienda_id
-            and lower(productos.nombre) like lower('%""" + x +"""%')
-            ;"""
+            and lower(productos.nombre) like lower('%""" + x +"""%');
+            """
             cur.execute(sql)
             data2.append(cur.fetchall())
         return render_template('gpu.html',title='gpu', data = data, data2 = data2, nomm = nomm)
@@ -157,12 +168,15 @@ def ram():
         nomm = request.form['buscar_ram_nombre']
         print (nomm)
         sql = """
-        select productos.nombre, especificacion, productos_detalle.detalle
-        from productos, productos_detalle, especificaciones
+        select productos.nombre, especificacion, productos_detalle.detalle, marcas.nombre
+        from productos, productos_detalle, especificaciones, marcas
         where productos.id = productos_detalle.producto_id
         and productos.categoria_id = '5'
         and productos_detalle.especificacion_id = especificaciones.id
-        and lower(productos.nombre) like lower('%""" + nomm +"""%');"""
+        and productos.marca_id = marcas.id
+        and lower(productos.nombre) like lower('%""" + nomm +"""%')
+        order by productos.nombre;
+        """
         cur.execute(sql)
         data = cur.fetchall()
         prod = []
@@ -178,8 +192,8 @@ def ram():
             from precios, tiendas, productos
             where productos.id = precios.producto_id
             and tiendas.id = precios.tienda_id
-            and lower(productos.nombre) like lower('%""" + x +"""%')
-            ;"""
+            and lower(productos.nombre) like lower('%""" + x +"""%');
+            """
             cur.execute(sql)
             data2.append(cur.fetchall())
         return render_template('ram.html',title='ram', data = data, data2 = data2, nomm = nomm)
