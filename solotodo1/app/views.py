@@ -567,5 +567,33 @@ def add_ram():
 @app.route('/index/delete', methods = ['POST' , 'GET'])
 def delete():
     if request.method=='POST':
-        print('asdasd')
+        delete_nombre = request.form['delete_nombre']
+        print(delete_nombre)
+        sql ="""
+        select id from productos where nombre = '"""+delete_nombre+"""';
+        """
+        cur.execute(sql)
+        id_productos=cur.fetchall()
+        print(id_productos)
+        print(len(id_productos))
+        for x in range(0,len(id_productos)):
+            print(id_productos[x][0])
+            id_prod=str(id_productos[x][0])
+            sql = """
+            delete from productos_detalle where producto_id="""+id_prod+""";
+            """
+            cur.execute(sql)
+            conn.commit()
+            sql = """
+            delete from precios where producto_id="""+id_prod+""";
+            """
+            cur.execute(sql)
+            conn.commit()
+
+        sql = """
+        delete from productos where nombre='"""+delete_nombre+"""';
+        """
+        cur.execute(sql)
+        conn.commit()
+
     return render_template('delete.html',title='Eliminar')
