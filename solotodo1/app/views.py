@@ -270,13 +270,13 @@ def add_mobo():
         """
         cur.execute(sql)
         new_id = cur.fetchall()
-        
+
         sql = """
         select id from marcas where nombre = '"""+marca+"""';
         """
         cur.execute(sql)
         marca_id = cur.fetchall()
-        
+
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
@@ -296,6 +296,13 @@ def add_mobo():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
+
+        tienda_id = str(tienda_id)
+        sql = """
+        INSERT INTO precios VALUES("""+new_id+""", """+tienda_id+""", """+precio+""");
+        """
+        cur.execute(sql)
+        conn.commit()
 
     return render_template('add_mobo.html',title='Agregar')
 
@@ -320,7 +327,7 @@ def add_cpu():
         """
         cur.execute(sql)
         marca_id = cur.fetchall()
-        
+
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
@@ -340,7 +347,14 @@ def add_cpu():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
-    
+
+        tienda_id = str(tienda_id)
+        sql = """
+        INSERT INTO precios VALUES("""+new_id+""", """+tienda_id+""", """+precio+""");
+        """
+        cur.execute(sql)
+        conn.commit()
+
     return render_template('add_cpu.html',title='Agregar')
 
 @app.route('/index/add_gpu', methods = ['POST' , 'GET'])
@@ -365,7 +379,7 @@ def add_gpu():
         """
         cur.execute(sql)
         marca_id = cur.fetchall()
-        
+
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
@@ -385,6 +399,13 @@ def add_gpu():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
+
+        tienda_id = str(tienda_id)
+        sql = """
+        INSERT INTO precios VALUES("""+new_id+""", """+tienda_id+""", """+precio+""");
+        """
+        cur.execute(sql)
+        conn.commit()
 
 
     return render_template('add_gpu.html',title='Agregar')
@@ -413,7 +434,7 @@ def add_ram():
         """
         cur.execute(sql)
         marca_id = cur.fetchall()
-        
+
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
@@ -433,6 +454,13 @@ def add_ram():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
+
+        tienda_id = str(tienda_id)
+        sql = """
+        INSERT INTO precios VALUES("""+new_id+""", """+tienda_id+""", """+precio+""");
+        """
+        cur.execute(sql)
+        conn.commit()        
 
 
     return render_template('add_ram.html',title='Agregar')
