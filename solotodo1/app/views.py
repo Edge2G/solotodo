@@ -248,8 +248,8 @@ def add_hdd():
         tablatiendas = cur.fetchall()
         tienda_id = 0
         for x in tablatiendas:
-            if tienda == tablatiendas[1]:
-                tienda_id = tablatiendas[0]
+            if tienda == x[1]:
+                tienda_id = x[0]
 
         tienda_id = str(tienda_id)
         sql = """
@@ -299,8 +299,8 @@ def add_mobo():
         tablatiendas = cur.fetchall()
         tienda_id = 0
         for x in tablatiendas:
-            if tienda == tablatiendas[1]:
-                tienda_id = tablatiendas[0]
+            if tienda == x[1]:
+                tienda_id = x[0]
 
         tienda_id = str(tienda_id)
         sql = """
@@ -350,8 +350,8 @@ def add_cpu():
         tablatiendas = cur.fetchall()
         tienda_id = 0
         for x in tablatiendas:
-            if tienda == tablatiendas[1]:
-                tienda_id = tablatiendas[0]
+            if tienda == x[1]:
+                tienda_id = x[0]
 
         tienda_id = str(tienda_id)
         sql = """
@@ -402,8 +402,8 @@ def add_gpu():
         tablatiendas = cur.fetchall()
         tienda_id = 0
         for x in tablatiendas:
-            if tienda == tablatiendas[1]:
-                tienda_id = tablatiendas[0]
+            if tienda == x[1]:
+                tienda_id = x[0]
 
         tienda_id = str(tienda_id)
         sql = """
@@ -457,15 +457,15 @@ def add_ram():
         tablatiendas = cur.fetchall()
         tienda_id = 0
         for x in tablatiendas:
-            if tienda == tablatiendas[1]:
-                tienda_id = tablatiendas[0]
+            if tienda == x[1]:
+                tienda_id = x[0]
 
         tienda_id = str(tienda_id)
         sql = """
         INSERT INTO precios VALUES("""+new_id+""", """+tienda_id+""", """+precio+""");
         """
         cur.execute(sql)
-        conn.commit()        
+        conn.commit()
 
 
     return render_template('add_ram.html',title='Agregar')
