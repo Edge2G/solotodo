@@ -60,6 +60,46 @@ INSERT INTO marcas VALUES(7,'Gigabyte');
 cur.execute(sql)
 
 sql= """
+INSERT INTO marcas VALUES(8,'Corsair');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(9,'Toshiba');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(10,'Asus');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(11,'MSI');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(12,'EVGA');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(13,'Corsair');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(14,'Crucial');
+"""
+cur.execute(sql)
+
+sql= """
+INSERT INTO marcas VALUES(15,'G.Skill');
+"""
+cur.execute(sql)
+
+sql= """
 INSERT INTO categorias VALUES(1,'Disco duro');
 """
 cur.execute(sql)

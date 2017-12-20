@@ -234,6 +234,8 @@ def add_hdd():
         conn.commit()
 
 
+
+
         sql = """
         select * from tiendas;
         """
@@ -264,6 +266,28 @@ def add_mobo():
         marca=request.form['marca']
 
         sql = """
+        select max(id)+1 as maximo from productos;
+        """
+        cur.execute(sql)
+        new_id = cur.fetchall()
+
+        sql = """
+        select id from marcas where nombre = '"""+marca+"""';
+        """
+        cur.execute(sql)
+        marca_id = cur.fetchall()
+        
+        new_id = str(new_id[0][0])
+        marca_id = str(marca_id[0][0])
+
+        sql= """
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        """
+        print(sql)
+        cur.execute(sql)
+        conn.commit()
+
+        sql = """
         select * from tiendas;
         """
         cur.execute(sql)
@@ -285,6 +309,28 @@ def add_cpu():
         cores=request.form['cores']
         socket=request.form['socket']
         marca=request.form['marca']
+
+        sql = """
+        select max(id)+1 as maximo from productos;
+        """
+        cur.execute(sql)
+        new_id = cur.fetchall()
+
+        sql = """
+        select id from marcas where nombre = '"""+marca+"""';
+        """
+        cur.execute(sql)
+        marca_id = cur.fetchall()
+        
+        new_id = str(new_id[0][0])
+        marca_id = str(marca_id[0][0])
+
+        sql= """
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        """
+        print(sql)
+        cur.execute(sql)
+        conn.commit()
 
         sql = """
         select * from tiendas;
@@ -311,6 +357,28 @@ def add_gpu():
         marca=request.form['marca']
 
         sql = """
+        select max(id)+1 as maximo from productos;
+        """
+        cur.execute(sql)
+        new_id = cur.fetchall()
+
+        sql = """
+        select id from marcas where nombre = '"""+marca+"""';
+        """
+        cur.execute(sql)
+        marca_id = cur.fetchall()
+        
+        new_id = str(new_id[0][0])
+        marca_id = str(marca_id[0][0])
+
+        sql= """
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        """
+        print(sql)
+        cur.execute(sql)
+        conn.commit()
+
+        sql = """
         select * from tiendas;
         """
         cur.execute(sql)
@@ -334,6 +402,28 @@ def add_ram():
         formato=request.form['formato']
         latencia=request.form['latencia']
         voltaje=request.form['voltaje']
+
+        sql = """
+        select max(id)+1 as maximo from productos;
+        """
+        cur.execute(sql)
+        new_id = cur.fetchall()
+
+        sql = """
+        select id from marcas where nombre = '"""+marca+"""';
+        """
+        cur.execute(sql)
+        marca_id = cur.fetchall()
+        
+        new_id = str(new_id[0][0])
+        marca_id = str(marca_id[0][0])
+
+        sql= """
+        INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",1);
+        """
+        print(sql)
+        cur.execute(sql)
+        conn.commit()
 
         sql = """
         select * from tiendas;
