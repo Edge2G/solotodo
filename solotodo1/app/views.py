@@ -205,6 +205,7 @@ def add_hdd():
         nombre=request.form['nuevo_hdd']
         precio=request.form['precio']
         tienda=request.form['tienda']
+
         tamano=request.form['tamano']
         rpm=request.form['RPM']
         cap=request.form['capacidad']
@@ -233,7 +234,11 @@ def add_hdd():
         cur.execute(sql)
         conn.commit()
 
-
+        sql="""
+        insert into productos_detalle values("""+new_id+""",1,'"""+tamano+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
 
 
         sql = """
