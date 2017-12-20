@@ -240,6 +240,23 @@ def add_hdd():
         cur.execute(sql)
         conn.commit()
 
+        sql="""
+        insert into productos_detalle values("""+new_id+""",2,'"""+rpm+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",3,'"""+cap+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",4,'"""+buf+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
 
         sql = """
         select * from tiendas;
@@ -266,6 +283,7 @@ def add_mobo():
         nombre=request.form['nuevo_mobo']
         precio=request.form['precio']
         tienda=request.form['tienda']
+
         socket=request.form['socket']
         formato=request.form['formato']
         marca=request.form['marca']
@@ -292,6 +310,19 @@ def add_mobo():
         cur.execute(sql)
         conn.commit()
 
+        sql="""
+        insert into productos_detalle values("""+new_id+""",6,'"""+socket+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",9,'"""+formato+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+
         sql = """
         select * from tiendas;
         """
@@ -310,6 +341,7 @@ def add_cpu():
         nombre=request.form['nuevo_cpu']
         precio=request.form['precio']
         tienda=request.form['tienda']
+
         cores=request.form['cores']
         socket=request.form['socket']
         marca=request.form['marca']
@@ -336,6 +368,18 @@ def add_cpu():
         cur.execute(sql)
         conn.commit()
 
+        sql="""
+        insert into productos_detalle values("""+new_id+""",5,'"""+cores+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",6,'"""+socket+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
         sql = """
         select * from tiendas;
         """
@@ -354,6 +398,7 @@ def add_gpu():
         nombre=request.form['nuevo_gpu']
         precio=request.form['precio']
         tienda=request.form['tienda']
+
         tamano=request.form['tamano']
         memoria=request.form['memoria']
         frecuencia=request.form['frecuencia']
@@ -381,6 +426,24 @@ def add_gpu():
         cur.execute(sql)
         conn.commit()
 
+        sql="""
+        insert into productos_detalle values("""+new_id+""",1,'"""+tamano+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",7,'"""+memoria+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",8,'"""+frecuencia+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
         sql = """
         select * from tiendas;
         """
@@ -401,6 +464,7 @@ def add_ram():
         precio=request.form['precio']
         marca=request.form['marca']
         tienda=request.form['tienda']
+
         memoria=request.form['memoria']
         frecuencia=request.form['frecuencia']
         formato=request.form['formato']
@@ -426,6 +490,36 @@ def add_ram():
         INSERT INTO productos VALUES("""+new_id+""",'"""+nombre+"""',"""+marca_id+""",5);
         """
         print(sql)
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",7,'"""+memoria+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",8,'"""+frecuencia+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",9,'"""+formato+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",10,'"""+latencia+"""');
+        """
+        cur.execute(sql)
+        conn.commit()
+
+        sql="""
+        insert into productos_detalle values("""+new_id+""",11,'"""+voltaje+"""');
+        """
         cur.execute(sql)
         conn.commit()
 
