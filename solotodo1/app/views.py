@@ -210,7 +210,7 @@ def add_hdd():
         cap=request.form['capacidad']
         buf=request.form['bufer']
         marca=request.form['marca']
-        
+
         sql = """
         select max(id)+1 as maximo from productos;
         """
@@ -222,7 +222,7 @@ def add_hdd():
         """
         cur.execute(sql)
         marca_id = cur.fetchall()
-        
+
         new_id = str(new_id[0][0])
         marca_id = str(marca_id[0][0])
 
@@ -243,9 +243,13 @@ def add_hdd():
         for x in tablatiendas:
             if tienda == tablatiendas[1]:
                 tienda_id = tablatiendas[0]
+
+        tienda_id = str(tienda_id)
         sql = """
-        select * from especificaciones;
+        INSERT INTO precios VALUES("""+new_id+""", """+tienda_id+""", """+precio+""");
         """
+        cur.execute(sql)
+        conn.commit()
 
     return render_template('add_hdd.html',title='Agregar')
 
@@ -347,6 +351,3 @@ def add_ram():
 @app.route('/index/delete', methods = ['POST' , 'GET'])
 def delete():
     return render_template('delete.html',title='Eliminar')
-
-
-
