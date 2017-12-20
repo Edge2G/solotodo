@@ -566,6 +566,6 @@ def add_ram():
 
 @app.route('/index/delete', methods = ['POST' , 'GET'])
 def delete():
-    if request.method='POST':
+    if request.method=='POST':
         print('asdasd')
     return render_template('delete.html',title='Eliminar')
