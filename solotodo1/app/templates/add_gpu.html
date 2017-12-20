@@ -5,7 +5,7 @@
             Solotodo - {{title}}
         </title>
         <p align="left"><a href="/index"><font size="6" color="green" face="monospace"> Volver </font></a></p>
-        <center><h1>Agregar Disco Duro</h1></center>
+        <center><h1>Agregar Tarjeta de Video</h1></center>
     </head>
     <body>
             <style>
@@ -31,8 +31,14 @@
                         
             </style>
 
+<form method='POST' action="/index/add_gpu" id="add_gpu">
+    <input type="text" name="nuevo_gpu" placeholder="Ingrese el nombre del producto nuevo">
+    <input type="text" name="precio" placeholder="Ingrese precio">
+    <input type="submit" value="Agregar">
+    </form>
+
             Tamaño:     
-            <select>
+            <select name="tamano" form="add_gpu">
                     <option value="325mm"> 325mm </option>
                     <option value="200mm"> 200mm </option>
                     <option value="255mm"> 255mm </option>
@@ -40,14 +46,14 @@
             </select>
 
             Memoria:    
-            <select>
+            <select name="memoria" form="add_gpu">
                     <option value="2GB"> 2 GB </option>
                     <option value="4GB"> 4 GB </option>                        
                     <option value="6GB"> 6 GB </option>
             </select>
 
             Frecuencia:      
-            <select>
+            <select name="frecuencia" form="add_gpu">
                     <option value="1600MHz"> 1600 MHz </option>
                     <option value="1650MHz"> 1650 MHz </option>
                     <option value="1771MHz"> 1771 MHz </option>
@@ -55,16 +61,18 @@
             </select>
 
             Marca:     
-            <select>
+            <select name="marca" form="add_gpu">
                     <option value="AMD"> AMD </option>
                     <option value="Nvidia"> Nvidia </option>
-
             </select>
 
+            Tienda:      
+            <select name="tienda" form="add_hdd">
+                    <option value="pcfactory"> PC Factory </option>
+                    <option value="spdigital"> SP Digital </option>
+                    <option value="ttchile"> TT Chile </option>
+                    <option value="bip"> Bip </option>                       
+            </select>
 
-            <form method='POST' action="/index/add_hdd">
-              <input type="text" name="nuevo_hdd" placeholder="Ingrese el nombre del producto nuevo">
-              <input type="submit" value="Agregar">
-              </form>
     </body>
 </html>

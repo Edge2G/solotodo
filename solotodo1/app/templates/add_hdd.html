@@ -31,20 +31,26 @@
                         
             </style>
 
+    <form method='POST' action="/index/add_hdd" id="add_hdd">
+    <input type="text" name="nuevo_hdd" placeholder="Ingrese el nombre del producto nuevo">
+    <input type="text" name="precio" placeholder="Ingrese precio">
+    <input type="submit" value="Agregar">
+    </form>
+
             Tamaño:     
-            <select>
+            <select name="tamano" form="add_hdd">
                     <option value="2.5"> 2.5" </option>
                     <option value="3.5"> 3.5" </option>                        
             </select>
 
             RPM:    
-            <select>
+            <select name="RPM" form="add_hdd">
                     <option value="5400"> 5400 </option>
                     <option value="7200"> 7200 </option>                        
             </select>
 
             Capacidad:      
-            <select>
+            <select name="capacidad" form="add_hdd">
                     <option value="128GB"> 128 GB </option>
                     <option value="256GB"> 256 GB </option>
                     <option value="512GB"> 500 GB </option>
@@ -52,23 +58,26 @@
             </select>
 
             Bufer:      
-            <select>
+            <select name="bufer" form="add_hdd">
                     <option value="16MB"> 16 MB </option>
                     <option value="32MB"> 32 MB </option>
                     <option value="128MB"> 128 MB </option>                       
             </select>
 
             Marca:     
-            <select>
+            <select name="marca" form="add_hdd">
                     <option value="WesternDigital"> Western Digital </option>
                     <option value="Seagate"> Seagate </option>
                     <option value="Toshiba"> Toshiba </option>
-
             </select>
 
-            <form method='POST' action="/index/add_hdd">
-              <input type="text" name="nuevo_hdd" placeholder="Ingrese el nombre del producto nuevo">
-              <input type="submit" value="Agregar">
-              </form>
+            Tienda:      
+            <select name="tienda" form="add_hdd">
+                    <option value="pcfactory"> PC Factory </option>
+                    <option value="spdigital"> SP Digital </option>
+                    <option value="ttchile"> TT Chile </option>
+                    <option value="bip"> Bip </option>                       
+            </select>
+
     </body>
 </html>

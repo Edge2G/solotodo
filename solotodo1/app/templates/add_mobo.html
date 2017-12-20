@@ -31,8 +31,14 @@
                         
             </style>
 
+<form method='POST' action="/index/add_mobo" id="add_mobo">
+    <input type="text" name="nuevo_mobo" placeholder="Ingrese el nombre del producto nuevo">
+    <input type="text" name="precio" placeholder="Ingrese precio">
+    <input type="submit" value="Agregar">
+    </form>
+
             Socket:     
-            <select>
+            <select name="socket" form="add_mobo">
                     <option value="AM3+"> AM3+ </option>
                     <option value="FM2"> FM2 </option>
                     <option value="FM2+"> FM2+ </option>
@@ -41,22 +47,26 @@
             </select>
 
             Formato:    
-            <select>
+            <select name="formato" form="add_mobo">
                     <option value="ATX"> ATX </option>
                     <option value="MiniATX"> Mini ATX </option>                        
             </select>
 
             Marca:     
-            <select>
+            <select name="marca" form="add_mobo">
                     <option value="Gigabyte"> Gigabyte </option>
                     <option value="Asus"> Asus </option>
                     <option value="MSI"> MSI </option>
                     <option value="EVGA"> EVGA </option>
             </select>
 
-            <form method='POST' action="/index/add_mobo">
-              <input type="text" name="nuevo_mobo" placeholder="Ingrese el nombre del producto nuevo">
-              <input type="submit" value="Agregar">
-              </form>
+            Tienda:      
+            <select name="tienda" form="add_hdd">
+                    <option value="pcfactory"> PC Factory </option>
+                    <option value="spdigital"> SP Digital </option>
+                    <option value="ttchile"> TT Chile </option>
+                    <option value="bip"> Bip </option>                       
+            </select>
+
     </body>
 </html>

@@ -187,22 +187,59 @@ def ram():
 
 @app.route('/index/add_hdd', methods = ['POST' , 'GET'])
 def add_hdd():
+    if request.method == 'POST':
+        nombre=request.form['nuevo_hdd']
+        precio=request.form['precio']
+        tamano=request.form['tamano']
+        rpm=request.form['RPM']
+        cap=request.form['capacidad']
+        buf=request.form['bufer']
+        marca=request.form['marca']
+
     return render_template('add_hdd.html',title='Agregar')
 
 @app.route('/index/add_mobo', methods = ['POST' , 'GET'])
 def add_mobo():
+    if request.method == 'POST':
+        nombre=request.form['nuevo_mobo']
+        precio=request.form['precio']
+        socket=request.form['socket']
+        formato=request.form['formato']
+        marca=request.form['marca']
+
     return render_template('add_mobo.html',title='Agregar')
 
 @app.route('/index/add_cpu', methods = ['POST' , 'GET'])
 def add_cpu():
+    if request.method == 'POST':
+        nombre=request.form['nuevo_cpu']
+        precio=request.form['precio']
+        cores=request.form['cores']
+        socket=request.form['socket']
+        marca=request.form['marca']
+
     return render_template('add_cpu.html',title='Agregar')
 
 @app.route('/index/add_gpu', methods = ['POST' , 'GET'])
 def add_gpu():
+    if request.method == 'POST':
+        nombre=request.form['nuevo_gpu']
+        precio=request.form['precio']
+        tamano=request.form['tamano']
+        memoria=request.form['memoria']
+        frecuencia=request.form['frecuencia']
+        marca=request.form['marca']
+
     return render_template('add_gpu.html',title='Agregar')
 
 @app.route('/index/add_ram', methods = ['POST' , 'GET'])
 def add_ram():
+    if request.method == 'POST':
+        nombre=request.form['nuevo_ram']
+        precio=request.form['precio']
+        memoria=request.form['memoria']
+        
+
     return render_template('add_ram.html',title='Agregar')
 
 @app.route('/index/delete', methods = ['POST' , 'GET'])

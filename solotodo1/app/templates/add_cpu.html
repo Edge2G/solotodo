@@ -31,8 +31,14 @@
                         
             </style>
 
+<form method='POST' action="/index/add_cpu" id="add_cpu">
+    <input type="text" name="nuevo_cpu" placeholder="Ingrese el nombre del producto nuevo">
+    <input type="text" name="precio" placeholder="Ingrese precio">
+    <input type="submit" value="Agregar">
+    </form>
+
             Numero de nucleos:     
-            <select>
+            <select name="cores" form="add_cpu">
                     <option value="2"> 2 </option>
                     <option value="4"> 4 </option>
                     <option value="6"> 6 </option>
@@ -40,7 +46,7 @@
             </select>
 
             Socket:    
-            <select>
+            <select name="socket" form="add_cpu">
                     <option value="AM3+"> AM3+ </option>
                     <option value="FM2"> FM2 </option>
                     <option value="FM2+"> FM2+ </option>
@@ -49,14 +55,18 @@
             </select>
 
             Marca:     
-            <select>
+            <select name="marca" form="add_cpu">
                     <option value="Intel"> Intel </option>
                     <option value="AMD"> AMD </option>
             </select>
 
-            <form method='POST' action="/index/add_cpu">
-              <input type="text" name="nuevo_cpu" placeholder="Ingrese el nombre del producto nuevo">
-              <input type="submit" value="Agregar">
-              </form>
+            Tienda:      
+            <select name="tienda" form="add_hdd">
+                    <option value="pcfactory"> PC Factory </option>
+                    <option value="spdigital"> SP Digital </option>
+                    <option value="ttchile"> TT Chile </option>
+                    <option value="bip"> Bip </option>                       
+            </select>
+
     </body>
 </html>
