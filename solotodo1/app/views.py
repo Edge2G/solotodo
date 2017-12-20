@@ -204,6 +204,7 @@ def add_hdd():
     if request.method == 'POST':
         nombre=request.form['nuevo_hdd']
         precio=request.form['precio']
+        tienda=request.form['tienda']
         tamano=request.form['tamano']
         rpm=request.form['RPM']
         cap=request.form['capacidad']
@@ -217,6 +218,7 @@ def add_mobo():
     if request.method == 'POST':
         nombre=request.form['nuevo_mobo']
         precio=request.form['precio']
+        tienda=request.form['tienda']
         socket=request.form['socket']
         formato=request.form['formato']
         marca=request.form['marca']
@@ -228,6 +230,7 @@ def add_cpu():
     if request.method == 'POST':
         nombre=request.form['nuevo_cpu']
         precio=request.form['precio']
+        tienda=request.form['tienda']
         cores=request.form['cores']
         socket=request.form['socket']
         marca=request.form['marca']
@@ -239,6 +242,7 @@ def add_gpu():
     if request.method == 'POST':
         nombre=request.form['nuevo_gpu']
         precio=request.form['precio']
+        tienda=request.form['tienda']
         tamano=request.form['tamano']
         memoria=request.form['memoria']
         frecuencia=request.form['frecuencia']
@@ -251,6 +255,7 @@ def add_ram():
     if request.method == 'POST':
         nombre=request.form['nuevo_ram']
         precio=request.form['precio']
+        tienda=request.form['tienda']
         memoria=request.form['memoria']
         frecuencia=request.form['frecuencia']
         formato=request.form['formato']
