@@ -34,7 +34,7 @@
     {% set temp = [] %}
     {% if temp.append('') %} {% endif %}
     {%for x in data%}
-      {% if temp[1] != x[0] %}
+      {% if temp|last != x[0] %}
         <h2>{{x[0]}}</h2>
         <h3>precios:</h3>
         {%for prod in data2%}

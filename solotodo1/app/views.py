@@ -47,7 +47,10 @@ def hdd():
             """
             cur.execute(sql)
             data2.append(cur.fetchall())
+<<<<<<< HEAD
             #print(data2)
+=======
+>>>>>>> 8ed880e86fc30ea236eea011d9368f34ee6081d4
         return render_template('hdd.html',title='hdd', data = data, data2 = data2, nomm = nomm)
     return render_template('hdd.html',title='hdd')
 
