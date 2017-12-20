@@ -231,7 +231,7 @@ def add_hdd():
         """
         print(sql)
         cur.execute(sql)
-
+        conn.commit()
 
 
         sql = """
@@ -347,3 +347,6 @@ def add_ram():
 @app.route('/index/delete', methods = ['POST' , 'GET'])
 def delete():
     return render_template('delete.html',title='Eliminar')
+
+
+
