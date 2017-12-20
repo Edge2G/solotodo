@@ -252,6 +252,10 @@ def add_ram():
         nombre=request.form['nuevo_ram']
         precio=request.form['precio']
         memoria=request.form['memoria']
+        frecuencia=request.form['frecuencia']
+        formato=request.form['formato']
+        latencia=request.form['latencia']
+        voltaje=request.form['voltaje']
         
 
     return render_template('add_ram.html',title='Agregar')
