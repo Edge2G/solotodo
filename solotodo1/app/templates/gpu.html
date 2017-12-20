@@ -35,6 +35,8 @@
     {% if temp.append('') %} {% endif %}
     {% set temp2 = [] %}
     {% if temp2.append('') %} {% endif %}
+    {% set temp3 = [] %}
+    {% if temp3.append('') %} {% endif %}
     {%for x in data%}
       {% if temp|last != x[0] %}
         <h2>{{x[0]}}</h2>
@@ -53,7 +55,13 @@
       {% if temp2|last != x[1] %}
         <h3>{{x[1]}}:</h3> {{x[2]}}
       {%endif%}
+      {% if temp2|last == x[1] %}
+        {%if temp3|last != x[2] %}
+          /{{x[2]}}
+        {%endif%}
+      {%endif%}
       {% if temp2.append(x[1]) %} {% endif %}
+      {% if temp3.append(x[2]) %} {% endif %}
     {%endfor%}
     {% endblock %}
   </body>
